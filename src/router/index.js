@@ -2,11 +2,11 @@ const router = require('koa-router')();
 const fs = require('fs')
 const partitions = require('./partitions');
 const ranking = require('./ranking');
-const _static = require('koa-static')
-const path = require('path')
+const video = require('./video');
 
 router.use('/api', partitions.routes());
 router.use('/api', ranking.routes());
+router.use('/api', video.routes());
 
 router.get('/static/*', async (ctx, next) => {
   let suffix = ctx.url.includes('js') ? 'js' : 'css';
@@ -17,9 +17,7 @@ router.get('/static/*', async (ctx, next) => {
 })
 
 router.get('*', async ctx => {
-  console.log(111111)
-  console.log(ctx.url)
-
+  console.log('进入页面路由');
   ctx.type = 'text/html';
   ctx.body = fs.createReadStream('./src/build/index.html');
 })
