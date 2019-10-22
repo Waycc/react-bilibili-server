@@ -2,7 +2,8 @@ const BILIBILI_WEB_API_PREFIX = 'https://api.bilibili.com/x/web-interface';
 const BILIBILI_API_PREFIX = 'https://api.bilibili.com'
 
 const INDEX_URL = 'https://m.bilibili.com/index.html';
-const VIDEO_URL = 'https://m.bilibili.com/video/av{aid}.html?redirectFrom=h5'
+const VIDEO_URL = 'https://m.bilibili.com/video/av{aid}.html?redirectFrom=h5';
+const RELATED_URL = BILIBILI_WEB_API_PREFIX + '/archive/related?aid={aid}'
 const SEARCH_DEFAULT_URL = BILIBILI_WEB_API_PREFIX + '/search/default';
 const RANKING_URL = BILIBILI_WEB_API_PREFIX + '/ranking';
 const RANKING_REGION_URL = BILIBILI_WEB_API_PREFIX + '/ranking/region';
@@ -21,5 +22,6 @@ module.exports = {
   RANKING_REGION_URL,
   ARCHIVE_RANK_URL,
   RES_LOC_URL,
-  VIDEO_URL
+  VIDEO_URL,
+  RELATED_URL
 }
