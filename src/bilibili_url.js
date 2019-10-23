@@ -8,6 +8,7 @@ const SEARCH_DEFAULT_URL = BILIBILI_WEB_API_PREFIX + '/search/default';
 const RANKING_URL = BILIBILI_WEB_API_PREFIX + '/ranking';
 const RANKING_REGION_URL = BILIBILI_WEB_API_PREFIX + '/ranking/region';
 const ARCHIVE_RANK_URL = BILIBILI_API_PREFIX + '/archive_rank/getarchiverankbypartion';
+const REPLY_URL = 'https://api.bilibili.com/x/v2/reply?type=1&sort=2&oid={aid}&pn={pn}&nohot=1';
 // 首页轮播图
 const RES_LOC_URL = 'https://api.bilibili.com/x/web-show/res/loc?pf=7&id=1695';
 
@@ -23,5 +24,6 @@ module.exports = {
   ARCHIVE_RANK_URL,
   RES_LOC_URL,
   VIDEO_URL,
-  RELATED_URL
+  RELATED_URL,
+  REPLY_URL
 }

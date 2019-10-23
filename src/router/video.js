@@ -1,6 +1,6 @@
 const router = require('koa-router')();
 const fetch = require('node-fetch');
-const { VIDEO_URL, USER_Agent, RELATED_URL } = require('../bilibili_url');
+const { VIDEO_URL, USER_Agent, RELATED_URL, REPLY_URL } = require('../bilibili_url');
 const { getInitialStateFromHTML } = require('../util')
 
 router.get('/video', async ctx => {
@@ -19,6 +19,15 @@ router.get('/archive/related', async ctx => {
   let related = await result.json();
   ctx.sendJson(related.data)
 });
+
+router.get('/reply', async ctx => {
+  let aid = ctx.query.aid;
+  let pn = ctx.query.pn || 1;
+  let url = REPLY_URL.replace('{aid}', aid).replace('{pn}', pn);
+  let result = await fetch(url)
+  let reply = await result.json()
+  ctx.sendJson(reply.data)
+})
 
 router.get('/mp4', async ctx => {
   let range = ctx.request.get('Range')
