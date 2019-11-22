@@ -1,6 +1,8 @@
+
 const getInitialStateFromHTML = (html) => {
-  let initialStateRe = /window.__INITIAL_STATE__\s*=\s*(.*?);/s;
+  let initialStateRe = /window.__INITIAL_STATE__\s*=\s*(.*?});/s;
   let result = initialStateRe.exec((html));
+  console.log(html)
   let initialState = {};
   if (result && result[1]) {
     initialState = JSON.parse(result[1])

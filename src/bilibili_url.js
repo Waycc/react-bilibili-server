@@ -11,6 +11,7 @@ const ARCHIVE_RANK_URL = BILIBILI_API_PREFIX + '/archive_rank/getarchiverankbypa
 const REPLY_URL = 'https://api.bilibili.com/x/v2/reply?type=1&sort=2&oid={aid}&pn={pn}&nohot=1';
 // 首页轮播图
 const RES_LOC_URL = 'https://api.bilibili.com/x/web-show/res/loc?pf=7&id=1695';
+const SUGGEST_URL = 'https://s.search.bilibili.com/main/suggest?jsoncallback=jQuery33103067950139098341_1573797241135&func=suggest&suggest_type=accurate&sub_type=tag&main_ver=v1&highlight=&bangumi_acc_num=3&special_acc_num=0&upuser_acc_num=0&tag_num=10&term={keyword}'
 
 const USER_Agent = "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) " +
   "AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1";

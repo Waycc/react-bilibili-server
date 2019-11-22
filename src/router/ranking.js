@@ -21,6 +21,7 @@ router.get('/loc', async ctx => {
 router.get('/image', async ctx => {
   const url = ctx.query.pic;
   let result = await fetch(url);
+  ctx.set("Content-Type", 'image/jpg');
   ctx.body = await result.buffer();
 });
 
