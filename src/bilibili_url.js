@@ -13,7 +13,7 @@ const REPLY_URL = 'https://api.bilibili.com/x/v2/reply?type=1&sort=2&oid={aid}&p
 // 首页轮播图
 const RES_LOC_URL = 'https://api.bilibili.com/x/web-show/res/loc?pf=7&id=1695';
 const SUGGEST_URL = 'https://s.search.bilibili.com/main/suggest?func=suggest&suggest_type=accurate&sub_type=tag&main_ver=v1&highlight=&bangumi_acc_num=3&special_acc_num=0&upuser_acc_num=0&tag_num=10&term={keyword}';
-const TYPE_SEARCH_URL = BILIBILI_WEB_API_PREFIX + '/search/type?keyword={keyword}&page={page}&pagesize={pagesize}&search_type=media_bangumi&order={order}';
+const TYPE_SEARCH_URL = BILIBILI_WEB_API_PREFIX + '/search/type?keyword={keyword}&page={page}&pagesize={pagesize}&search_type={search_type}&order={order}';
 const ALL_SEARCH_URL = BILIBILI_WEB_API_PREFIX + '/search/all/v2?keyword={keyword}&page={page}&pagesize={pagesize}&search_type=all&order={order}';
 
 const USER_Agent = "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) " +
@@ -31,5 +31,7 @@ module.exports = {
   RELATED_URL,
   REPLY_URL,
   SUGGEST_URL,
-  HOT_WORD_URL
+  HOT_WORD_URL,
+  TYPE_SEARCH_URL,
+  ALL_SEARCH_URL,
 };

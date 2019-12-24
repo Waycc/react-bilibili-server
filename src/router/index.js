@@ -11,10 +11,15 @@ router.use('/api', video.routes());
 router.use('/api', search.routes());
 
 router.get('/static/*', async (ctx, next) => {
-  let suffix = ctx.url.includes('js') ? 'js' : 'css';
+  let splits = ctx.url.split('.')
+  let suffix = splits[splits.length - 1];
   let resourcesPath = './src/build' + ctx.url;
   console.log(resourcesPath)
-  ctx.type = 'text/' + suffix;
+  let sourceTypePrefix = 'text/'
+  if (['png', 'jpg'].includes(suffix)) {
+    sourceTypePrefix = 'image/'
+  }
+  ctx.type = sourceTypePrefix + suffix;
   ctx.body = fs.createReadStream(resourcesPath);
 })
 
